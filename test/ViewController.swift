@@ -22,11 +22,11 @@ class ViewController: UIViewController {
         setupButton()
     }
     
-    fileprivate func setupTextView() {
+    private func setupTextView() {
         textView.layer.borderColor = UIColor.lightGray.cgColor
         textView.layer.borderWidth = 1
     }
-    fileprivate func setupButton() {
+    private func setupButton() {
         button.layer.borderColor = UIColor.lightGray.cgColor
         button.layer.borderWidth = 1
     }
