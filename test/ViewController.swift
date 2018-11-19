@@ -14,6 +14,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var button: UIButton!
     
     
+  
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupTextView()
+        setupButton()
+    }
+    
     fileprivate func setupTextView() {
         textView.layer.borderColor = UIColor.lightGray.cgColor
         textView.layer.borderWidth = 1
@@ -23,12 +31,7 @@ class ViewController: UIViewController {
         button.layer.borderWidth = 1
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        setupTextView()
-        setupButton()
-    }
+    
     @IBAction func split(_ sender: UITextField) {
         if let text = textField.text?.split(separator: " "){
             var result:String = ""
