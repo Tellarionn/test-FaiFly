@@ -9,12 +9,33 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var button: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        textView.layer.borderColor = UIColor.lightGray.cgColor
+         textView.layer.borderWidth = 1
+        
+        button.layer.borderColor = UIColor.lightGray.cgColor
+        button.layer.borderWidth = 1
     }
-
+    @IBAction func split(_ sender: UITextField) {
+        if let text = textField.text?.split(separator: " "){
+            var result:String = ""
+            for (index , value) in text.enumerated(){
+                result += value + " "
+                if (index + 1) % 4 == 0 {
+                    result += "\n"
+                }
+            }
+            textView.text = result
+        }
+    }
+    
 
 }
 
